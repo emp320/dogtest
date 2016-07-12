@@ -24,7 +24,7 @@ lint:
 
 tests:
 	@echo [tests]
-	@PORT=5555 DB=test-db LEVEL=silly $(BIN)/istanbul cover --print summary $(BIN)/_mocha -- --recursive
+	@PORT=5555 DB=dev-dogdb LEVEL=silly $(BIN)/istanbul cover --print summary $(BIN)/_mocha -- --recursive
 
 watch: all
 	@echo [watch]
@@ -36,4 +36,4 @@ fast-tests-watch: fast-tests
 
 fast-tests: main ready compile-back tests
 
-all: main ready compile-front compile-back lint tests
+all: main ready compile-front compile-back  tests
